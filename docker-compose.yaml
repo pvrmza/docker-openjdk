@@ -1,0 +1,11 @@
+version "2"
+
+  javajar:
+    image: pvr/docker-java8:latest
+    restart: always
+    environment:
+      - JDBC_DATABASE_PASSWORD=ChangeIT 
+      - JDBC_DATABASE_USERNAME=root 
+      - JDBC_DATABASE_URL="jdbc:mysql://dbhost:32768/database?useUnicode=true&characterEncoding=utf8&use SSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true"
+    ports:
+      - 8080:8080
